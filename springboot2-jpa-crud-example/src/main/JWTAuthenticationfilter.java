@@ -28,9 +28,9 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
             try {
                 Claims claims = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
                 String username = claims.getSubject();
-                // You may perform additional validation here if needed
+               
 
-                // Set authentication in Security Context
+             
                 SecurityContextHolder.getContext().setAuthentication(
                         new UsernamePasswordAuthenticationToken(username, null, null)
                 );
